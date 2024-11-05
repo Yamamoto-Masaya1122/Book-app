@@ -1,5 +1,5 @@
-FROM node:latest AS node
-FROM php:8.0-fpm
+FROM node:18 AS node
+FROM php:8.2-fpm
 
 ENV TZ Asia/Tokyo
 
