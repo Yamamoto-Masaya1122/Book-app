@@ -13,6 +13,32 @@ class BookController extends Controller
         return view('books.index', compact('books'));
     }
 
+    public function search(Request $request)
+    {
+        //検索ワードをフォームに残す
+        $title = $request->input('title');
+        $author = $request->input('author');
+        $publishing_company = $request->input('publishing_company');
+
+        $query = Book::query();
+
+        if (!empty($request->title)) {
+            $query->where('title', 'LIKE', "%{$request->title}%");
+        }
+
+        if (!empty($request->author)) {
+            $query->where('author', 'LIKE', "%{$request->author}%");
+        }
+
+        if (!empty($request->publishing_company)) {
+            $query->where('publishing_company', 'LIKE', "%{$request->publishing_company}%");
+        }
+
+        $books = $query->get();
+
+        return view('books.index', compact('books', 'title', 'author', 'publishing_company'));
+    }
+
     public function create()
     {
         return view('books.create');
@@ -22,11 +48,6 @@ class BookController extends Controller
     {
         Book::create($request->all());
         return redirect()->route('books.index');
-    }
-
-    public function show($id)
-    {
-        //
     }
 
     public function edit($id)

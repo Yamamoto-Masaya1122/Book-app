@@ -1,19 +1,19 @@
 @extends('layouts.app')
 @section('content')
-<div class="flex rounded-lg border border-gray-300 h-24 items-center shadow-md">
+<form action="{{ route('books.search') }}" method="GET" class="flex rounded-lg border border-gray-300 h-24 items-center shadow-md">
   <div class="ml-8">
-    <input type="text" class="w-full rounded-md border border-gray-300 p-1" placeholder="タイトル" />
+    <input type="text" name="title" value="{{ $title }}" class="w-full rounded-md border border-gray-300 p-1" placeholder="タイトル" />
   </div>
   <div class="ml-8">
-    <input type="text" class="w-full rounded-md border border-gray-300 p-1" placeholder="著者" />
+    <input type="text" name="author" value="{{ $author }}" class="w-full rounded-md border border-gray-300 p-1" placeholder="著者" />
   </div>
   <div class="ml-8">
-    <input type="text" class="w-full rounded-md border border-gray-300 p-1" placeholder="出版社" />
+    <input type="text" name="publishing_company" value="{{ $publishing_company }}" class="w-full rounded-md border border-gray-300 p-1" placeholder="出版社" />
   </div>
   <div class="ml-8">
-    <button type="button" class="rounded-lg border border-blue-500 bg-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-blue-700 hover:bg-blue-700 focus:ring focus:ring-blue-200 disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300">検索</button>
+    <button type="submit" class="rounded-lg border border-blue-500 bg-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-blue-700 hover:bg-blue-700 focus:ring focus:ring-blue-200 disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300">検索</button>
   </div>
-</div>
+</form>
 
 <div class="flex justify-end my-5 mr-4">
   <a href="{{route('books.create')}}" class="rounded-lg border border-blue-500 bg-blue-500 p-2 text-center text-sm font-medium text-white shadow-sm transition-all hover:border-blue-700 hover:bg-blue-700 focus:ring focus:ring-blue-200 disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-300">
