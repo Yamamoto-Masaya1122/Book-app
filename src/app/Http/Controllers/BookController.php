@@ -15,11 +15,6 @@ class BookController extends Controller
 
     public function search(Request $request)
     {
-        //検索ワードをフォームに残す
-        $title = $request->input('title');
-        $author = $request->input('author');
-        $publishing_company = $request->input('publishing_company');
-
         $query = Book::query();
 
         if (!empty($request->title)) {

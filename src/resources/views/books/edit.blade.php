@@ -22,7 +22,7 @@
     </div>
     <div>
       <label for="release_date" class="mb-1 block text-sm font-medium text-gray-700">発売日</label>
-      <input type="text" id="release_date" name="release_date" value="{{ old('release_date', $book->release_date) }}" class="block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"/>
+      <input type="date" id="release_date" name="release_date" value="{{ old('release_date', $book->release_date) }}" class="block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"/>
     </div>
     <div>
       <label for="price" class="mb-1 block text-sm font-medium text-gray-700">価格</label>
