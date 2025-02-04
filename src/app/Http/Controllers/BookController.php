@@ -37,11 +37,24 @@ class BookController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        $book->title = $request->title;
+        $book->isbn_code = $request->isbn_code;
+        $book->author = $request->author;
+        $book->publishing_company = $request->publishing_company;
+        $book->release_date = $request->release_date;
+        $book->price = $request->price;
+        $book->memo = $request->memo;
+
+        $book->save();
+        return redirect()->route('books.index');
     }
 
     public function destroy($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        $book->delete();
+        return redirect()->route('books.index');
     }
 }

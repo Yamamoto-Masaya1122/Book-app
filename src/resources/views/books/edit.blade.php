@@ -3,6 +3,7 @@
 <div class="mx-auto max-w-xl">
   <form action="{{ route('books.update', $book->id) }}" method="post" class="space-y-5">
     @csrf
+    @method('PUT')
     <div>
       <label for="title" class="mb-1 block text-sm font-medium text-gray-700">タイトル</label>
       <input type="text" id="title" name="title" value="{{ old('title', $book->title) }}" class="block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-400 focus:ring focus:ring-blue-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"/>
