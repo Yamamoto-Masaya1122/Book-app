@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('author', 255)->comment('著者');
             $table->string('publishing_company', 255)->comment('出版社');
             $table->date('release_date')->nullable()->comment('発売日');
-            $table->string('price')->nullable()->comment('価格');
+            $table->integer('price')->nullable()->comment('価格(円)');
             $table->text('memo')->nullable()->comment('メモ');
             $table->softDeletes()->nullable();
 
