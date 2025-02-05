@@ -33,7 +33,7 @@ class BookController extends Controller
 
         $books = $query->get();
 
-        return view('books.index', compact('books', 'title', 'author', 'publishing_company'));
+        return view('books.index', compact('books'));
     }
 
     public function create()
