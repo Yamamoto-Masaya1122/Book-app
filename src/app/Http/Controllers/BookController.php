@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BookStoreRequest;
+use App\Http\Requests\BookUpdateRequest;
 use App\Models\Book;
 
 class BookController extends Controller
@@ -39,7 +41,7 @@ class BookController extends Controller
         return view('books.create');
     }
 
-    public function store(Request $request)
+    public function store(BookStoreRequest $request)
     {
         Book::create($request->all());
         return redirect()->route('books.index');
@@ -51,7 +53,7 @@ class BookController extends Controller
         return view('books.edit', compact('book'));
     }
 
-    public function update(Request $request, $id)
+    public function update(BookUpdateRequest $request, $id)
     {
         $book = Book::findOrFail($id);
 
