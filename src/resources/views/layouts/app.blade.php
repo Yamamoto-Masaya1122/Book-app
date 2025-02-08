@@ -10,7 +10,7 @@
   <!-- サイドバー -->
   @include('layouts.sidebar')
   <!-- メインコンテンツ（ヘッダーとメイン部分） -->
-  <div class="ml-[12%] w-[88%]">
+  <div class="ml-[15%] w-[85%]">
     <!-- ヘッダー -->
     <header class="text-gray-600 body-font bg-gray-200">
       @include('layouts.header')
