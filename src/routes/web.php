@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\DashBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::get('/', function () {
 
 Route::get('/books/search', [BookController::class, 'search'])->name('books.search');
 Route::resource('books', BookController::class);
+Route::get('dashboard', [DashBoardController::class, 'index'])->name('dashboard');
